@@ -18,21 +18,21 @@ jobs:
         with:
           node-version: '14'  # Or the version you're using
 
-      # Navigate to the 'home-web' directory and run npm commands
+      # Navigate to the 'home-web' directory and install dependencies
       - name: Install dependencies
         run: |
-          cd home-web  # Adjust path as needed
+          cd home-web  # Adjust path if necessary
           npm install
 
       - name: Build the app
         run: |
-          cd home-web  # Adjust path as needed
+          cd home-web  # Adjust path if necessary
           npm run build
 
       - name: Deploy to GitHub Pages
         run: |
-          cd home-web  # Adjust path as needed
-          npm run deploy
+          cd home-web  # Adjust path if necessary
+          npm run deploy  # This will run the 'gh-pages -d build' command
         env:
           CI: false  # Optional: This disables any interactive prompts in GitHub Actions
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Pass GitHub Token to gh-pages
