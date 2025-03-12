@@ -21,17 +21,17 @@ jobs:
       # Navigate to the 'home-web' directory and run npm commands
       - name: Install dependencies
         run: |
-          cd test_reactjs/tree/Production/home-web  # Adjust path as needed
+          cd test_reactjs/Production/home-web  # Adjust path as needed
           npm install
 
       - name: Build the app
         run: |
-          cd test_reactjs/tree/Production/home-web  # Adjust path as needed
+          cd test_reactjs/Production/home-web  # Adjust path as needed
           npm run build
 
       - name: Deploy to GitHub Pages
         run: |
-          cd test_reactjs/tree/Production/home-web  # Adjust path as needed
+          cd test_reactjs/Production/home-web  # Adjust path as needed
           npm run deploy
         env:
           CI: false  # Optional: This disables any interactive prompts in GitHub Actions
