@@ -35,3 +35,4 @@ jobs:
           npm run deploy
         env:
           CI: false  # Optional: This disables any interactive prompts in GitHub Actions
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
