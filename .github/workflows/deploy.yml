@@ -3,7 +3,7 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - Production  # Or the branch you're using
+      - Production  # Or your default branch
 
 jobs:
   deploy:
@@ -16,25 +16,22 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'  # Or whichever version you're using
+          node-version: '14'  # Or the version you're using
 
-      # Navigate to the 'test_reactjs/tree/Production/home-web' directory
-      - name: Change directory to home-web
-        run: cd test_reactjs/tree/Production/home-web
-
+      # Navigate to the 'home-web' directory and run npm commands
       - name: Install dependencies
         run: |
-          cd test_reactjs/tree/Production/home-web  # Navigate to your app directory
+          cd test_reactjs/tree/Production/home-web  # Adjust path as needed
           npm install
 
       - name: Build the app
         run: |
-          cd test_reactjs/tree/Production/home-web  # Navigate to your app directory
+          cd test_reactjs/tree/Production/home-web  # Adjust path as needed
           npm run build
 
       - name: Deploy to GitHub Pages
         run: |
-          cd test_reactjs/tree/Production/home-web  # Navigate to your app directory
+          cd test_reactjs/tree/Production/home-web  # Adjust path as needed
           npm run deploy
         env:
           CI: false  # Optional: This disables any interactive prompts in GitHub Actions
