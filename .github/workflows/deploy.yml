@@ -17,6 +17,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14'  # or any version you're using
+          
+      - name: Navigate to frontend directory
+        run: cd frontend  # Change this to the correct folder if it's not 'frontend'
 
       - name: Install dependencies
         run: npm install
